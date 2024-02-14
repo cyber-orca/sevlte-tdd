@@ -1,7 +1,13 @@
+/**
+ *  @Birthday component unit test 
+ *  This unit test ensures the Birthday components exist before checking
+ *  for values on the page
+ * 
+ */
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/svelte";
 
-import Birthdays from './Birthdays.svelte'; 
+import Birthday from './Birthday.svelte'; 
 
 describe("Birthday", () => {
 
@@ -12,21 +18,21 @@ describe("Birthday", () => {
 
     it("Displays the name of a person", () => {
 
-        render(Birthdays, {...exampleBirthday, name: 'Athena'}); 
+        render(Birthday, {...exampleBirthday, name: 'Athena'}); 
         expect(screen.queryByText('Athena')).toBeVisible();
 
     }); 
 
     it("Imports Birthday Component => displaying birthdays", () => {
 
-        render(Birthdays, { ...exampleBirthday, name : "Amora"}); 
+        render(Birthday, { ...exampleBirthday, name : "Amora"}); 
         
         expect(screen.queryByText("Amora")).toBeVisible();
     });
 
     it("Displays the DOB", () => {
     
-        render(Birthdays, {...exampleBirthday, dob : '2021-05-02'}); 
+        render(Birthday, {...exampleBirthday, dob : '2021-05-02'}); 
         expect(screen.queryByText('2021-05-02')).toBeVisible();
     });
 })
