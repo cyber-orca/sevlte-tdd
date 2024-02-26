@@ -1,5 +1,5 @@
 /**
- *  This unit test is expected to load +page.svelte and 
+ *  @Vitest This unit test is expected to load +page.svelte and 
  *   check the page route to ensure the correct data is displayed
  *   in this case teh @param Hercules & @param Athena are hard coded. 
  *    
@@ -7,7 +7,7 @@
  */
 import { describe, it, expect } from 'vitest'; 
 import { render, screen } from '@testing-library/svelte'; 
-import * as Page from './+page.svelte'; 
+import Page from './+page.svelte'; 
 
 describe('/birthdays - route', () => {
     const birthdays = [
